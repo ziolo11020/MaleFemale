@@ -217,7 +217,7 @@
         
         // Sprawdź czy ktoś wygrał
         if (scores.damy >= 100 || scores.panowie >= 100) {
-            let winner = scores.damy >= 100 ? "Damy" : "Panowie";
+            let winner = scores.damy >= 100 ? "Damy" : "Dżentelmeni";
             document.getElementById('turn-announcement').innerHTML = `🏆 KONIEC GRY! WYGRYWAJĄ ${winner.toUpperCase()}! 🏆`;
             document.querySelector('#board-view button').style.display = 'none';
         } else {
