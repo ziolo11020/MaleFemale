@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Damy i Panowie - Gra Towarzyska</title>
+    <title>Damy i Dżentelmeni - Gra Towarzyska</title>
     <style>
         :root {
             --damy-color: #e84393;
@@ -55,7 +55,7 @@
             color: white;
         }
         .btn-damy { background-color: var(--damy-color); }
-        .btn-panowie { background-color: var(--panowie-color); }
+        .btn-panowie{ background-color: var(--panowie-color); }
         .btn-start { background-color: #44bd32; font-size: 22px; width: 100%; margin: 20px 0 0 0;}
         .btn-start:disabled { background-color: #7f8fa6; cursor: not-allowed; }
         
@@ -122,13 +122,13 @@
 <body>
 
 <div class="container">
-    <h1>Damy i Panowie 👑</h1>
+    <h1>Damy i Dżentelmeni 👑</h1>
 
     <!-- WIDOK 1: USTAWIENIA -->
     <div id="setup-view" class="active">
         <h2>Kto zaczyna grę?</h2>
         <button id="btn-select-damy" class="btn-damy" onclick="selectTeam('damy')">Damy 👩</button>
-        <button id="btn-select-panowie" class="btn-panowie" onclick="selectTeam('panowie')">Panowie 👨</button>
+        <button id="btn-select-panowie" class="btn-panowie" onclick="selectTeam('panowie')">Dżentelmeni 👨</button>
         
         <div style="margin-top: 40px;">
             <button id="btn-start-game" class="btn-start" onclick="showBoard()" disabled>Rozpocznij grę!</button>
@@ -147,7 +147,7 @@
         </div>
 
         <div class="score-label">
-            <span style="color: var(--panowie-color);">Panowie: <span id="score-panowie">0</span></span>
+            <span style="color: var(--panowie-color);">Dżentelmeni: <span id="score-panowie">0</span></span>
         </div>
         <div class="track">
             <div id="pawn-panowie" class="pawn pawn-panowie" style="left: 0%;">👨</div>
@@ -221,7 +221,7 @@
             document.getElementById('turn-announcement').innerHTML = `🏆 KONIEC GRY! WYGRYWAJĄ ${winner.toUpperCase()}! 🏆`;
             document.querySelector('#board-view button').style.display = 'none';
         } else {
-            let teamName = currentTeam === 'damy' ? "👩 Damy" : "👨 Panowie";
+            let teamName = currentTeam === 'damy' ? "👩 Damy" : "👨Dżentelmeni";
             document.getElementById('turn-announcement').innerText = `Kolej na: ${teamName}`;
         }
         
@@ -306,7 +306,7 @@
         alert(`Czas minął! Zdobyte punkty: ${currentRoundScore}`);
         
         // Zmiana drużyny na następną
-        currentTeam = currentTeam === 'damy' ? 'panowie' : 'damy';
+        currentTeam = currentTeam === 'damy' ? 'dżentelmeni' : 'damy';
         
         showBoard();
     }
